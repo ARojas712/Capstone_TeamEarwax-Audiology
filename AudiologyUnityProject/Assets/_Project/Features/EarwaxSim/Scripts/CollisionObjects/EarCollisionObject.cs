@@ -23,6 +23,7 @@ public class EarCollisionObject : CollisionObjectBase
     public float viewParticleSize = .1f;
     [Min(0f)]
     public float viewCutoff = .1f;
+    public bool drawShape = false;
 
     BoxCollider boxCollider;
     ViewingLattice viewer;
@@ -353,8 +354,11 @@ public class EarCollisionObject : CollisionObjectBase
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        DrawShapeTree(this.shape);
+        if (drawShape)
+        {
+            Gizmos.color = Color.yellow;
+            DrawShapeTree(this.shape);
+        }
         if (drawLattice) this.viewer.DrawLattice(this, viewCutoff);
     }
 }

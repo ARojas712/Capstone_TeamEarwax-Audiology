@@ -760,7 +760,7 @@ namespace EarwaxSim
             // Draw distance constraints
             if (drawDist)
             {
-                Gizmos.color = new(1f, 1f, 1f, .5f);
+                Gizmos.color = new(1f, 1f, 1f, .25f);
                 for (int i = 0; i < dist.constraints.Length; i++)
                 {
                     if (!dist.constraints[i].active) continue;
